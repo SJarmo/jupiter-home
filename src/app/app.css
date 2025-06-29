@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.category-section {
+  margin-bottom: 2rem;
+}
+
+.video-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.video-card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.video-card p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+p {
+  display: none;
+}
+
+.video-row-wrapper {
+  position: relative; /* et sees olev nupp saab absoluutse positsiooni */
+}
+button[_ngcontent-ng-c2210895969]:not(.scroll-button) {
+  display: none;
+}
+.scroll-button {
+  position: absolute;
+  right: 50px; /* paremale servale */
+  top: 50%; /* vertikaalselt keskele */
+  transform: translateY(-50%); /* täpsem keskpunkt */
+  background: black; /* must nool */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px; /* noole suurus */
+  height: 80px;
+  width: 40px;
+  border-radius: 20px;
+}
+
