@@ -8,15 +8,28 @@
           <h2>{{ category.header }}</h2>
 
           <div class="video-row-wrapper">
-            <button (click)="scrollRight(videoRow)">→</button>
+            <button
+              class="scroll-button left"
+              *ngIf="showLeftArrow"
+              (click)="scrollLeft(videoRow)">
+              <i class="bi bi-arrow-left-circle"></i>
+            </button>
+
             <div class="video-row" #videoRow>
               <div class="video-card" *ngFor="let video of category.data">
                 <img [src]="video.verticalPhotos?.[0]?.photoUrlBase" [alt]="video.title" />
                 <p>{{ video.heading }}</p>
               </div>
-              <button class="scroll-button" (click)="scrollRight(videoRow)">→</button>
             </div>
+
+            <button
+              class="scroll-button right"
+              *ngIf="showRightArrow"
+              (click)="scrollRight(videoRow)">
+              <i class="bi bi-arrow-right-circle"></i>
+            </button>
           </div>
+
         </div>
       </ng-container>
 

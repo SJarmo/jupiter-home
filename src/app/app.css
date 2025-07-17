@@ -42,25 +42,41 @@ p {
 }
 
 .video-row-wrapper {
-  position: relative; /* et sees olev nupp saab absoluutse positsiooni */
-}
-button[_ngcontent-ng-c2210895969]:not(.scroll-button) {
-  display: none;
-}
-.scroll-button {
-  position: absolute;
-  right: 50px; /* paremale servale */
-  top: 50%; /* vertikaalselt keskele */
-  transform: translateY(-50%); /* täpsem keskpunkt */
-  background: black; /* must nool */
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 24px; /* noole suurus */
-  height: 80px;
-  width: 40px;
-  border-radius: 20px;
+  position: relative; /* vajalik, et nupud oleksid wrapperi sees */
 }
 
+/* Üldised nupu stiilid */
+.scroll-button {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 32px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.scroll-button.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-button.right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.video-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.video-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
